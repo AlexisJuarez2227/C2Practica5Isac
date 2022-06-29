@@ -13,6 +13,6 @@ public class Principal {
             leer.lecturaDatos();
             System.out.println("Desea ingresar otra hora?");
             opcion=entrada.next();
-        }while (opcion.equals("si")|| opcion.equals("Si"));
+        }while (opcion.equals("Si")|| opcion.equals("si"));
     }
 }

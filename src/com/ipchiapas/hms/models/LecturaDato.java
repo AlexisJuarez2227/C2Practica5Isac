@@ -8,17 +8,17 @@ public class LecturaDato {
     Control verificar=new Control();
     public void lecturaDatos(){
         do {
-            System.out.println("Ingrese la hora");
+            System.out.println("Introduzca la hora");
             h = entrada.nextInt();
-        }while (!verificar.verificacionHora(h));
+        }while (!verificar.verificacion(h,1));
         do {
-            System.out.println("Ingrese los minutos");
+            System.out.println("Introduzca los minutos");
             m = entrada.nextInt();
-        }while (!verificar.verificacionMinutos(m));
+        }while (!verificar.verificacion(m, 2));
         do {
-            System.out.println("Ingrese los seguntos");
+            System.out.println("Introduzca los seguntos");
             s = entrada.nextInt();
-        }while (!verificar.verificacionSegundos(s));
+        }while (!verificar.verificacion(s, 3));
         verificar.imprime.impresionHora(h,m,s);
     }
 }

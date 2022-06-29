@@ -2,31 +2,30 @@ package com.ipchiapas.hms.models;
 
 public class Control {
     Impresion imprime = new Impresion();
-    public boolean verificacionHora(int H){
+    public boolean verificacion(int h, int opcion){
         boolean bandera=true;
-        if (H<1||H>24) {
-            imprime.errorHora();
-            bandera=false;
+        switch (opcion) {
+
+            case 1:
+                if (h<1||h>24) {
+                    bandera = false;
+                    imprime.errorHora();
+                }
+                    break;
+            case 2:
+                if (h<0||h>59) {
+                    bandera = false;
+                    imprime.errorMinuto();
+                }
+                break;
+            case 3:
+                if (h<0||h>59) {
+                    bandera = false;
+                    imprime.errorSegundo();
+                }
+                break;
         }
-        else System.out.println("Hora corecta");
-        return bandera;
-    }
-    public boolean verificacionMinutos(int M){
-        boolean bandera=true;
-        if (M<0||M>59) {
-            imprime.errorMinuto();
-            bandera=false;
-        }
-        else System.out.println("Minuto corecto");
-        return bandera;
-    }
-    public boolean verificacionSegundos(int S){
-        boolean bandera=true;
-        if (S<0||S>59) {
-            imprime.errorSegundo();
-            bandera=false;
-        }
-        else System.out.println("segunto corecto");
         return bandera;
     }
 }
+
